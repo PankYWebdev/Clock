@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>clock</title>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="hour" id="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec" id="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+    </div>
+
+      <script>
+        setInterval(() => {
+            let d = new Date();
+            let htime = d.getHours();
+            let mtime = d.getMinutes();
+            let stime = d.getSeconds();
+
+            let srotation = stime*6;
+            let mrotation = mtime*6 + srotation/60;
+            // let mrotation = mtime*6 + stime/10;(we can also write this)
+            let hrotation = htime*30 + mrotation/12;
+            // let hrotation = htime*30 + mtime/2;(we can also write this)
+
+            sec.style.transform = `rotate(${srotation}deg)`;
+            mn.style.transform = `rotate(${mrotation}deg)`;
+            hr.style.transform = `rotate(${hrotation}deg)`;
+        }, 1000);
+    </script> -->
+</body>
+
+</html>
